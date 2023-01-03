@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-})->name('landing')->middleware('guest');
+})->name('home');
 
 Route::get('/welcome', function () {
     return view('auth.registration_welcome');
@@ -36,4 +36,10 @@ Route::get('worker-registration-form', [App\Http\Controllers\Auth\RegisterContro
 Route::post('worker-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'workerRegistration'])->name('workerRegistration');
 Route::get('buyer-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'buyerRegistrationForm'])->name('buyerRegistrationForm');
 Route::post('buyer-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'buyerRegistration'])->name('buyerRegistration');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+Route::get('/id', [App\Http\Controllers\HomeController::class, 'id'])->name('id');
+Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings'])->name('settings');
+Route::get('/change-password', [App\Http\Controllers\HomeController::class, 'changePasswordForm'])->name('changePasswordForm');
+Route::post('/change-password', [App\Http\Controllers\HomeController::class, 'changePassword'])->name('changePassword');
+Route::get('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeIDForm'])->name('changeIDForm');
+Route::post('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeID'])->name('changeID');

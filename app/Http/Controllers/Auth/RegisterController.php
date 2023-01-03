@@ -123,7 +123,7 @@ class RegisterController extends Controller
         try {
             $data = new User;
             $data->name = $request->name;
-            $data->role_id = 4; //worker
+            $data->role_id = 3; //worker
             $data->section_name = $request->section_name;
             $data->rank = $request->rank;
             $data->service_year = $request->service_year;

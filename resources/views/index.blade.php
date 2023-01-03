@@ -42,7 +42,7 @@
     <!-- navbar -->
     <header class="bg-white ">
         <div class="w-full mx-auto md:mx-auto flex justify-between flex-row items-center px-2 lg:px-24 py-3 lg:py-5">
-            <a href="{{route ('landing') }}"
+            <a href="{{route ('home') }}"
                 class="flex text-primary font-eng text-xl lg:text-2xl title-font font-bold items-center md:mb-0">
                 GAAC.ONE
             </a>
@@ -59,17 +59,27 @@
                     <ul class="dropdown-menu absolute hidden text-gray-700">
                         <li class=""><a
                                 class="rounded-t bg-shade_deep hover:bg-primary font-bold hover:text-white py-2 px-8 text-black block whitespace-no-wrap"
-                                href="{{route ('landing') }}">বাংলা</a></li>
+                                href="{{route ('home') }}">বাংলা</a></li>
                         <li class=""><a
                                 class="rounded-b bg-shade_deep hover:bg-primary font-bold py-2 px-8 text-black hover:text-white block whitespace-no-wrap"
                                 href="{{route ('landingEn') }}">English</a></li>
                     </ul>
                 </div>
-
+                @guest
+                    
                 <a href="{{ route ('login') }}"
                     class="bg-primary text-white hover:bg-white border-2 border-primary hover:border-2 hover:border-primary hover:text-primary px-5 lg:px-10 py-1 lg:py-2 lg:text-2xl font-bangla rounded-full">
                     লগইন
                 </a>
+
+                @else
+                    
+                <a href="{{ route ('profile') }}"
+                    class="bg-primary text-white hover:bg-white border-2 border-primary hover:border-2 hover:border-primary hover:text-primary px-5 lg:px-10 py-1 lg:py-2 lg:text-2xl font-bangla rounded-full">
+                    প্রোফাইল
+                </a>
+                
+                @endguest
             </div>
 
 

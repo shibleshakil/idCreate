@@ -58,7 +58,7 @@
           <ul class="dropdown-menu absolute hidden text-gray-700">
             <li class=""><a
                 class="rounded-t bg-shade_deep hover:bg-primary font-bold hover:text-white py-2 px-8 text-black block whitespace-no-wrap"
-                href="{{ route ('landing') }}">বাংলা</a></li>
+                href="{{ route ('home') }}">বাংলা</a></li>
             <li class=""><a
                 class="rounded-b bg-shade_deep hover:bg-primary font-bold py-2 px-8 text-black hover:text-white block whitespace-no-wrap"
                 href="{{ route ('landingEn') }}">English</a></li>

@@ -44,7 +44,7 @@
     <!-- navbar -->
     <header class="bg-white z-50 sticky top-0 ">
         <div class="w-full mx-auto md:mx-auto flex justify-between flex-row items-center px-2 lg:px-24 py-3 lg:py-5">
-            <a href="{{ route ('landing') }}"
+            <a href="{{ route ('home') }}"
                 class="flex text-primary font-eng text-xl lg:text-2xl title-font font-bold items-center md:mb-0">
                 GAAC.ONE
             </a>
