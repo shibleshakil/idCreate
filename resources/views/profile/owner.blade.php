@@ -6,7 +6,7 @@
     <div class="flex flex-col md:flex-row px-3 lg:px-24 py-4 md:items-center bg-shade">
 
         <div class=" flex  flex-row  space-x-5 font-bangla text-text items-center lg:w-1/3">
-            <div><img class="w-16 lg:w-20 bg-white" src="{{ asset ('/nav_icon/avatar.png')}}" alt=""></div>
+            @include('profile.image_section')
             <div class="flex flex-col justify-between items-start text-text">
                 <div class="text-sm font-semibold lg:text-lg">{{$data->name}}</div>
                 <div class="text-sm lg:text-lg">Owner</div>

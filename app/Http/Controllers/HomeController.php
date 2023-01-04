@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\models\User;
 use auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File; 
 
 class HomeController extends Controller
 {
@@ -122,5 +123,31 @@ class HomeController extends Controller
             
             return back()->with('error', 'Internal server error');
         }
+    }
+
+    public function changeImage(Request $request){
+        $validatedData = $request->validate([
+            'image' =>  ['image', 'mimes:jpeg,png,jpg,gif,svg,webp'],
+        ]);
+        $user = User::find(auth()->user()->id);
+        $oldImg = $user->image;
+        if($request->image){
+            if($request->file('image')){
+                $image = $request->file('image');
+                $input = time() . '_' . $image->getClientOriginalName();
+                $destinationPath = public_path('uploads');
+                $image->move($destinationPath,$input);
+                $user->image = $input;
+            }
+        }
+        $user->save();
+        if ($oldImg) {
+            $filePath = public_path('uploads/'.$oldImg);
+            if (file_exists($filePath)){
+                unlink($filePath);
+            }
+        }
+        \Session::flash('success', 'Profile image changed successfully!');
+        return back();
     }
 }

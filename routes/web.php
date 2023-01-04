@@ -48,6 +48,7 @@ Route::group(['middleware' => ['lang']], function () {
         Route::post('/change-password', [App\Http\Controllers\HomeController::class, 'changePassword'])->name('changePassword');
         Route::get('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeIDForm'])->name('changeIDForm');
         Route::post('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeID'])->name('changeID');
+        Route::post('/change-profile-picture', [App\Http\Controllers\HomeController::class, 'changeImage'])->name('changeImage');
 
     });
 });
