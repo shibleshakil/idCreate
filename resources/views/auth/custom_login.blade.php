@@ -28,7 +28,7 @@
                                 <input type="password" name="password" id="password"
                                     class="w-full bg-white rounded border focus:border-shade_deep focus:bg-white focus:ring-1 text-base outline-none text-primary py-1 pr-3 pl-12 leading-8 transition-colors duration-200 ease-in-out"
                                     required>
-                                    <div class="absolute top-[37px] left-2"><i class="fa fa-eye-slash" id="eye"></i></div>
+                                    <div class="absolute top-[37px] right-2"><i class="fa fa-eye-slash" id="eye"></i></div>
                             </div>
                         </div>
 
