@@ -67,7 +67,7 @@ class HomeController extends Controller
     public function changePassword(Request $request){
         $validatedData = $request->validate([
             'old_password' => 'required',
-            'password' => 'required|confirmed|min:8|different:old_password', 
+            'password' => 'required|confirmed|min:4|different:old_password', 
         ],[
             'password.different' => 'The new password and old password must be different.',
         ]);
