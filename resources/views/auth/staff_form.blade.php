@@ -7,25 +7,6 @@
 <section class="font-bangla body-font relative bg-shade h-[100vh]">
     <div class="container px-5 py-6 lg:py-12 mx-auto">
         <div class="lg:w-1/2 md:w-2/3 mx-auto">
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-            @if ($message = Session::get('success'))
-            <div class="alert alert-success alert-block">
-                <strong>{{ $message }}</strong>
-            </div>
-            @endif
-            @if ($message = Session::get('error'))
-            <div class="alert alert-danger alert-block">
-                <strong>{{ $message }}</strong>
-            </div>
-            @endif
             <form action="{{ route ('staffRegistration') }}" method="post" enctype="multipart/form-data">@csrf
                 <div class="flex flex-wrap -m-2">
 
@@ -88,7 +69,21 @@
                         </div>
                     </div>
 
-                    <div class="p-2 w-full mt-8 lg:mt-12">
+                    <div class="w-full mt-4 lg:mt-4">
+                        @if ($errors->any())
+                            <div class="alert alert-danger mx-auto my-auto py-4 text-center text-red-500">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if ($message = Session::get('error'))
+                            <div class="alert alert-danger alert-block mx-auto my-auto py-4 text-center text-red-500">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @endif
                         <button type="submit"
                             class="flex w-36 flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-1 px-8 focus:outline-none hover:bg-shade_deep hover:text-text rounded-full text-lg">সাবমিট</button>
                     </div>
