@@ -80,6 +80,7 @@
 
         </div>
     </header>
+    @if ($errors->any() || Session::get('success') || Session::get('error'))
     <div id="alertDiv" class="flex flex-col md:flex-row  md:items-center bg-shade border-y-2 border-y-white">
         @if ($errors->any())
         <div class="alert alert-danger px-3 lg:px-24 py-4 text-left text-red-500">
@@ -101,6 +102,7 @@
         </div>
         @endif
     </div>
+    @endif
 
     @yield('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -151,8 +153,6 @@
 
         function changeImage(){
             $('#uploadImage').trigger('click');
-            // let file = $('#uploadImage').val();
-            // console.log(file);
         }
     </script>
 

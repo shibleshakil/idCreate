@@ -41,7 +41,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
             'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ],[
             'mobile_number.digits' => 'The mobile number must be 11 digits without +88.'
         ]);
@@ -76,7 +76,7 @@ class RegisterController extends Controller
             'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
             'service_year' => ['nullable', 'numeric'],
             'service_month' => ['nullable', 'numeric'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:4'],
         ],[
             'mobile_number.digits' => 'The mobile number must be 10 digits without +88.'
         ]);
@@ -114,7 +114,7 @@ class RegisterController extends Controller
             'service_year' => ['nullable', 'numeric'],
             'service_month' => ['nullable', 'numeric'],
             'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:4'],
         ],[
             'mobile_number.digits' => 'The mobile number must be 10 digits without +88.'
         ]);
@@ -151,7 +151,7 @@ class RegisterController extends Controller
             'mobile_number' => ['required', 'numeric', 'unique:users'],
             'category' => ['required', 'string', 'max:255'],
             'nationality' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
 
         DB::beginTransaction();
@@ -204,7 +204,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
 
