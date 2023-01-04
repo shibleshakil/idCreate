@@ -100,19 +100,16 @@ class HomeController extends Controller
             'password' => 'required', 
             'mobile_number' => 'required|unique:users|different:current_mobile_number', 
         ],[
+            'mobile_number.unique' => 'The new mobile number has already been taken.',
             'mobile_number.different' => 'The new mobile number and old mobile number must be different.',
         ]);
         
         try {
             $user = User::findOrFail(auth()->user()->id);
-    
             if (Hash::check($request->password, $user->password)) { 
                 if ($request->current_mobile_number == $user->mobile_number) {
-                    
-                    $user->fill([
-                        'mobile_number' => $request->mobile_number
-                    ])->save();
-                
+                    $user->mobile_number = $request->mobile_number;
+                    $user->save();
                    return view('id.congrates');
                 }else {
                     return back()->with('error', 'Current mobile number does not match');

@@ -19,6 +19,7 @@ Route::group(['middleware' => ['lang']], function () {
 
     Route::get('language/{lang}', 'App\Http\Controllers\LanguageController@language')->name('language');
     Route::get('/', function () {
+        \Session::flush();
         return view('index');
     })->name('home');
     Route::get('/welcome', function () {

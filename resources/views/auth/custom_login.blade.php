@@ -50,7 +50,7 @@
                             </div>
                         </div>
 
-                        <a href="/forgot/number_submit.html" class=" mt-8 mb-4 w-full">
+                        <a href="#" class=" mt-8 mb-4 w-full">
                             <button type="submit"
                                 class="flex w-44 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">পাসওয়ার্ড
                                 ভুলে গেছেন?</button>

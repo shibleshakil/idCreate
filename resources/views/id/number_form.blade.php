@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset ('css/style.css?v1')}}">
     <style>
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -98,10 +99,10 @@
                         </div>
 
 
-                        <a href="/settings/change_number_congrate.html" class="p-2 w-full mt-8">
+                        <div class="p-2 w-full mt-8">
                             <button type="submit"
                                 class="flex w-36 flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-1 px-8 focus:outline-none hover:bg-shade_deep hover:text-text rounded-full text-lg">সাবমিট</button>
-                        </a>
+                        </div>
                     </div>
                 </form>
             </div>

@@ -40,10 +40,10 @@ class RegisterController extends Controller
         $validatedData = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
-            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:10'],
+            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ],[
-            'mobile_number.digits' => 'The mobile number must be 10 digits without +880.'
+            'mobile_number.digits' => 'The mobile number must be 11 digits without +88.'
         ]);
 
         DB::beginTransaction();
@@ -52,7 +52,7 @@ class RegisterController extends Controller
             $data->name = $request->name;
             $data->role_id = 1; //owner
             $data->email = $request->email;
-            $data->mobile_number = '+880' . $request->mobile_number;
+            $data->mobile_number = $request->mobile_number;
             $data->password = Hash::make($request->password);
             $data->save();
             DB::commit();
@@ -73,12 +73,12 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'string', 'email', 'max:255', 'unique:users'],
             'rank' => ['nullable', 'string', 'max:255'],
-            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:10'],
+            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
             'service_year' => ['nullable', 'numeric'],
             'service_month' => ['nullable', 'numeric'],
             'password' => ['required', 'string', 'min:8'],
         ],[
-            'mobile_number.digits' => 'The mobile number must be 10 digits without +880.'
+            'mobile_number.digits' => 'The mobile number must be 10 digits without +88.'
         ]);
 
         DB::beginTransaction();
@@ -87,7 +87,7 @@ class RegisterController extends Controller
             $data->name = $request->name;
             $data->role_id = 2; //staff
             $data->email = $request->email;
-            $data->mobile_number = '+880' . $request->mobile_number;
+            $data->mobile_number = $request->mobile_number;
             $data->rank = $request->rank;
             $data->service_year = $request->service_year;
             $data->service_month = $request->service_month;
@@ -113,10 +113,10 @@ class RegisterController extends Controller
             'rank' => ['nullable', 'string', 'max:255'],
             'service_year' => ['nullable', 'numeric'],
             'service_month' => ['nullable', 'numeric'],
-            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:10'],
+            'mobile_number' => ['required', 'numeric', 'unique:users', 'digits:11'],
             'password' => ['required', 'string', 'min:8'],
         ],[
-            'mobile_number.digits' => 'The mobile number must be 10 digits without +880.'
+            'mobile_number.digits' => 'The mobile number must be 10 digits without +88.'
         ]);
 
         DB::beginTransaction();
@@ -128,7 +128,7 @@ class RegisterController extends Controller
             $data->rank = $request->rank;
             $data->service_year = $request->service_year;
             $data->service_month = $request->service_month;
-            $data->mobile_number = '+880' . $request->mobile_number;
+            $data->mobile_number = $request->mobile_number;
             $data->password = Hash::make($request->password);
             $data->save();
             DB::commit();
