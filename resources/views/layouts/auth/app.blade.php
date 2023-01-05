@@ -52,7 +52,7 @@
 
             <a href="{{ route ('login') }}"
                 class="bg-primary text-white hover:bg-white border-2 border-primary hover:border-2 hover:border-primary hover:text-primary px-5 lg:px-10 py-1 lg:py-2 lg:text-2xl font-bangla rounded-full">
-                লগইন
+                {{__('Login')}}
             </a>
         </div>
     </header>

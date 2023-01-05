@@ -10,13 +10,13 @@
                     <form action="{{ route ('login') }}" method="post">@csrf
                         <div class=" w-full -mt-5 ">
                             <div class="relative flex justify-center items-center text-center lg:text-lg">
-                                <h1 class="font-bangla mx-auto  text-xl lg:text-2xl">লগইন করুন </h1>
+                                <h1 class="font-bangla mx-auto  text-xl lg:text-2xl">{{__('Log in')}} </h1>
                             </div>
                         </div>
 
                         <div class="p-2 mt-16 w-full ">
                             <div class="relative">
-                                <label class="leading-7 text-sm lg:text-lg text-text">আইডি মোবাইল নাম্বার</label>
+                                <label class="leading-7 text-sm lg:text-lg text-text">{{__('ID mobile number')}}</label>
                                 <input type="text" name="login"
                                     class="w-full bg-white rounded border focus:border-shade_deep focus:bg-white focus:ring-1 text-base outline-none text-primary py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                     required>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="p-2 w-full ">
                             <div class="relative">
-                                <label class="leading-7 text-sm lg:text-lg text-text">পাসওয়ার্ড</label>
+                                <label class="leading-7 text-sm lg:text-lg text-text">{{__('ID Password')}}</label>
                                 <input type="password" name="password" id="password"
                                     class="w-full bg-white rounded border focus:border-shade_deep focus:bg-white focus:ring-1 text-base outline-none text-primary py-1 px-3 pr-8 leading-8 transition-colors duration-200 ease-in-out"
                                     required>
@@ -34,8 +34,7 @@
 
                         <a href="#" class=" mt-8 mb-4 w-full">
                             <button type="submit"
-                                class="flex w-44 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">পাসওয়ার্ড
-                                ভুলে গেছেন?</button>
+                                class="flex w-44 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">{{__('Forgot password')}}?</button>
                         </a>
 
                         <div class="p-2 w-full mt-1">
@@ -55,7 +54,7 @@
                             @endif
 
                             <button type="submit"
-                            class="flex w-36 flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-1 px-8 focus:outline-none hover:bg-shade_deep hover:text-text rounded-full text-lg">সাবমিট</button>
+                            class="flex w-36 flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-1 px-8 focus:outline-none hover:bg-shade_deep hover:text-text rounded-full text-lg">{{__('Submit')}}</button>
                         </div>
                     </form>
                 </div>

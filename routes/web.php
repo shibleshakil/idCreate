@@ -49,6 +49,15 @@ Route::group(['middleware' => ['lang']], function () {
         Route::get('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeIDForm'])->name('changeIDForm');
         Route::post('/change-id-number', [App\Http\Controllers\HomeController::class, 'changeID'])->name('changeID');
         Route::post('/change-profile-picture', [App\Http\Controllers\HomeController::class, 'changeImage'])->name('changeImage');
+        
+        //owner
+        Route::get('/owner/settings', [App\Http\Controllers\UserSetting::class, 'ownerSettings'])->name('ownerSettings');
 
+        //buyer
+        Route::get('/buyer/settings', [App\Http\Controllers\UserSetting::class, 'buyerSettings'])->name('buyerSettings');
+        Route::get('/buyer/change-password', [App\Http\Controllers\UserSetting::class, 'buyerChangePasswordForm'])->name('buyerChangePasswordForm');
+        Route::post('/buyer/change-password', [App\Http\Controllers\UserSetting::class, 'buyerChangePassword'])->name('buyerChangePassword');
+        Route::get('/buyer/change-id-number', [App\Http\Controllers\UserSetting::class, 'buyerChangeIDForm'])->name('buyerChangeIDForm');
+        Route::post('/buyer/change-id-number', [App\Http\Controllers\UserSetting::class, 'buyerChangeID'])->name('buyerChangeID');
     });
 });

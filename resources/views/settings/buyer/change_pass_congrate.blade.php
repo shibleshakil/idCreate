@@ -10,23 +10,24 @@
 
                     <div class="p-2 w-full ">
                         <div class="relative flex justify-center items-center text-center lg:text-lg">
-                            <h1 class="font-bangla mx-auto  text-xl lg:text-2xl font-semibold">অভিনন্দন</h1>
+                            <h1 class="font-bangla mx-auto  text-xl lg:text-2xl font-semibold">Congratulations</h1>
                         </div>
                     </div>
                     <div class="p-10 w-full ">
                         <div class=" flex justify-center items-center text-center">
-                            <h1>আপনার পাসওয়ার্ড পরিবর্তন সম্পন্ন হয়েছে</h1>
+                            <h1>Your password change is done</h1>
 
                         </div>
                     </div>
 
                     <a href="{{ route ('profile') }}"
-                        class="w-full flex w-36 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">প্রোফাইলে যান
+                        class="w-full flex w-36 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">Go to profile
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
 @endsection
 @section('script')
 @endsection

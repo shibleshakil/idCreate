@@ -50,6 +50,15 @@
                 class="flex text-primary font-eng text-2xl title-font font-bold items-center mb-4 md:mb-0 hidden lg:block">
                 GAAC.ONE
             </a>
+            @if (auth()->user()->role_id == 1 )
+                @include('layouts.navbar.owner')
+            @elseif (auth()->user()->role_id == 2 )
+                @include('layouts.navbar.staff')
+            @elseif (auth()->user()->role_id == 3 )
+                @include('layouts.navbar.worker')
+            @elseif (auth()->user()->role_id == 4 )
+                @include('layouts.navbar.buyer')
+            @else
             <nav class="md:mx-auto flex flex-row text-base justify-between w-full lg:w-[40%]">
                 <a class=" w-full flex justify-center text-primary text-center px-3 md:px-10 lg:px-10 py-3 lg:py-5 hover:bg-shade text-2xl lg:text-3xl border-b-4 border-b-primary"
                     href="{{ route ('home') }}"><img class=" w-6 lg:w-12" src="{{ asset ('nav_icon/home.svg') }}" alt="home"></a>
@@ -77,6 +86,7 @@
                 </div>
 
             </div>
+            @endif
 
         </div>
     </header>
