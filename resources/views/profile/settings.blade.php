@@ -12,7 +12,9 @@
 
 <!-- hero -->
 <div class="pt-2 pb-6">
-    <img class="w-36 h-36 bg-white rounded mx-auto mt-8" src="{{auth()->user()->image ?  asset ('/uploads/'.auth()->user()->image) : asset ('/nav_icon/avatar.png')}}" alt="">
+    <div class="w-36 h-36 bg-white rounded mx-auto mt-8">
+        <img class="w-36 h-36 bg-white rounded mx-auto mt-8" src="{{auth()->user()->image ?  asset ('/uploads/'.auth()->user()->image) : asset ('/nav_icon/avatar.png')}}" alt="">
+    </div>
 </div>
 
 <div class="pb-3">
