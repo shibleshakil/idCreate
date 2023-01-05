@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="pb-6">
-        <div class="lg:w-1/3 w-full text-center mx-auto text-text font-bangla  text-lg lg:text-xl">{{auth()->user()->category}}</div>
+        <div class="lg:w-1/3 w-full text-center mx-auto text-text font-bangla  text-lg lg:text-xl">{{ucwords(strtolower(auth()->user()->category))}}</div>
     </div>
 
     <div class="pb-6  px-3">
