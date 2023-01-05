@@ -46,7 +46,7 @@
 
     <header class="bg-white sticky top-0 z-50">
         <div class="w-full mx-auto md:mx-auto flex justify-center lg:justify-between flex-row items-center lg:px-24">
-            <a href="{{ route ('home') }}"
+            <a href="{{ route ('profile') }}"
                 class="flex text-primary font-eng text-2xl title-font font-bold items-center mb-4 md:mb-0 hidden lg:block">
                 GAAC.ONE
             </a>
