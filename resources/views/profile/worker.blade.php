@@ -16,7 +16,7 @@
 
         <div class="flex space-x-2 justify-between lg:justify-center w-full lg:w-1/3 items-center mx-auto pt-2 lg:pt-0">
             <div class="mt-1 md:mt-0 justify-center items-center text-center font-bangla text-text">
-                <a href="/profile_data/worker_profile_data.html"
+                <a href="#"
                     class="bg-primary border-2 hover:border-2 hover:border-primary w-full lg:w-64 mx-auto rounded-md py-1  px-5 space-x-2 md:space-x-5 lg:py-2 flex flex-row  justify-center text-center items-center">
                     <p class="text-white hover:text-shade_deep text-sm lg:text-xl text-center items-center">প্রোফাইল সম্পন্ন
                     </p>
@@ -24,7 +24,7 @@
                 </a>
             </div>
             <div class="justify-end items-end text-center font-bangla text-text block lg:hidden">
-                <a href="/help/id_share.html"
+                <a href="#"
                     class="bg-primary w-full border-2 hover:border-2 hover:border-primary mt-1 lg:w-64 mx-auto rounded-md py-1 px-5 lg:py-2 flex flex-row  justify-center text-center items-center">
                     <p class="text-white hover:text-shade_deep text-sm lg:text-xl text-center items-center"> আইডি তৈরী ও
                         শেয়ার </p>
@@ -34,7 +34,7 @@
         </div>
         <div class="flex  justify-end lg:w-1/3 items-end">
             <div class="justify-end items-end text-center font-bangla text-text hidden lg:block">
-                <a href="/help/id_share.html"
+                <a href="#"
                     class="bg-primary w-full lg:w-64 mx-auto rounded-md py-1   sp lg:py-2 flex flex-row  justify-center text-center items-center">
                     <p class="text-white hover:text-shade_deep text-sm lg:text-xl text-center items-center">আইডি তৈরী ও
                         শেয়ার </p>
@@ -54,10 +54,10 @@
             <div class="flex flex-col justify-center items-center text-center space-x-2 md:space-x-5">
                 <div class="text-lg lg:text-xl font-thin">আপনার কর্মরত কোম্পানিটি খোজে যুক্ত হোন</div>
                 <div class="flex flex-row space-x-5">
-                    <a href="/tutorial/how_add.html">
+                    <a href="#">
                         <div class="text-sm lg:text-lg">কিভাবে যুক্ত হবেন?</div>
                     </a>
-                    <a href="/tutorial/why_add.html">
+                    <a href="#">
                         <div class="text-sm lg:text-lg">যুক্ত হলে কী হবে?</div>
                     </a>
                 </div>
@@ -110,10 +110,10 @@
             </form>
 
             <div class="flex flex-row space-x-8">
-                <a href="/tutorial/how_add.html">
+                <a href="#">
                     <div class="text-sm lg:text-lg">কিভাবে যুক্ত হবেন?</div>
                 </a>
-                <a href="/tutorial/why_add.html">
+                <a href="#">
                     <div class="text-sm lg:text-lg">যুক্ত হলে কী হবে?</div>
                 </a>
             </div>

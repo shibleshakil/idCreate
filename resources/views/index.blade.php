@@ -95,9 +95,9 @@
 
             <div
                 class="flex flex-row justify-between items-center text-lg md:text-xl lg:text-2xl text-white w-full pt-5">
-                <a href="./homepage/digital_service.html"
+                <a href="#"
                     class="bg-primary rounded-md text-center items-center px-2 lg:px-4 py-1 hover:text-shade_deep">{{__('Digital service')}}</a>
-                <a href="./message/guest_message.html"><img class="w-10 " src="{{ asset('nav_icon/msg5.png')}}"
+                <a href="#"><img class="w-10 " src="{{ asset('nav_icon/msg5.png')}}"
                         alt="message"></a>
             </div>
         </div>
