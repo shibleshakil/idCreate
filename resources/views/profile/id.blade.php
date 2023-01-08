@@ -56,6 +56,7 @@
             @php
                 $associateUser = $users->where('id', $associate)->first();
             @endphp
+            @if ($associateUser)
             <div class=" px-3 text-text font-bangla text-sm lg:text-lg w-full lg:w-1/3 mx-auto flex justify-between space-x-1">
                 <div class="w-11 h-11 bg-white rounded">
                     <img class="w-11 h-11 bg-white rounded" src="{{$associateUser->image ?  asset ('/uploads/'.$associateUser->image) : asset ('/nav_icon/avatar.png')}}" alt="">
@@ -68,6 +69,7 @@
                     <a href="#" class="text-lg lg:text-2xl text-primary"><i class="	fa fa-trash"></i></a>
                 </div>
             </div>
+            @endif
         @endforeach
     @endif
 
