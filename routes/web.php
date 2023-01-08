@@ -59,5 +59,10 @@ Route::group(['middleware' => ['lang']], function () {
         Route::post('/buyer/change-password', [App\Http\Controllers\UserSetting::class, 'buyerChangePassword'])->name('buyerChangePassword');
         Route::get('/buyer/change-id-number', [App\Http\Controllers\UserSetting::class, 'buyerChangeIDForm'])->name('buyerChangeIDForm');
         Route::post('/buyer/change-id-number', [App\Http\Controllers\UserSetting::class, 'buyerChangeID'])->name('buyerChangeID');
+
+        // associate Id
+        Route::get('add-associate-id', [App\Http\Controllers\AssociateIdController::class, 'addAssociatedIdForm'])->name('addAssociatedIdForm');
+        Route::match(['get', 'post'], 'send-otp', [App\Http\Controllers\AssociateIdController::class, 'sendOtp'])->name('sendOtp');
+        Route::match(['get', 'post'], 'varify-otp', [App\Http\Controllers\AssociateIdController::class, 'varifyOtp'])->name('varifyOtp');
     });
 });

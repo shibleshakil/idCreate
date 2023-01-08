@@ -45,6 +45,9 @@
         <a class="w-full font-bangla">
             <button type="button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex w-36 flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-1 px-8 rounded-full border-2 text-sm lg:text-lg"> লগ আউট</button>
         </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     </div>
 @endsection
 @section('script')
