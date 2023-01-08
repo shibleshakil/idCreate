@@ -21,6 +21,11 @@
     "Profile": "Profile",
     "Change Password": "Change Password",
     "Name": "Name",
+    "Change password": "Change password",
+    "New password": "New password",
+    "Confirm password": "Confirm password",
     "Translate": "Translate",
+    "Send user id mobile number": "Send user id mobile number",
+    "We sent you a OTP code, submit it": "We sent you a OTP code, submit it",
     "Email": "Email"
 }

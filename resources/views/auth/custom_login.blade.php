@@ -32,9 +32,8 @@
                             </div>
                         </div>
 
-                        <a href="#" class=" mt-8 mb-4 w-full">
-                            <button type="submit"
-                                class="flex w-44 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">{{__('Forgot password')}}?</button>
+                        <a href="{{ route ('forgotPasswordShow')}}" 
+                            class="mb-4 w-full flex w-44 flex justify-center items-center text-center mx-auto text-primary hover:text-text  text-lg">{{__('Forgot password')}}?
                         </a>
 
                         <div class="p-2 w-full mt-1">
@@ -49,6 +48,11 @@
                             @endif
                             @if ($message = Session::get('error'))
                                 <div class="alert alert-danger alert-block mx-auto my-auto py-4 text-center text-red-500">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @endif
+                            @if ($message = Session::get('success'))
+                                <div class="alert alert-success alert-block mx-auto my-auto py-4 text-center text-green-500">
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @endif

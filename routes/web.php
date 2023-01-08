@@ -39,6 +39,10 @@ Route::group(['middleware' => ['lang']], function () {
     Route::post('worker-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'workerRegistration'])->name('workerRegistration');
     Route::get('buyer-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'buyerRegistrationForm'])->name('buyerRegistrationForm');
     Route::post('buyer-registration-form', [App\Http\Controllers\Auth\RegisterController::class, 'buyerRegistration'])->name('buyerRegistration');
+    Route::get('user-forgot-password', [App\Http\Controllers\Auth\ForgotController::class, 'forgotPasswordShow'])->name('forgotPasswordShow');
+    Route::post('user-forgot-password', [App\Http\Controllers\Auth\ForgotController::class, 'forgotPassword'])->name('forgotPassword');
+    Route::match(['get', 'post'], 'user-forgot-otp-varify', [App\Http\Controllers\Auth\ForgotController::class, 'forgotOtpVarify'])->name('forgotOtpVarify');
+    Route::match(['get', 'post'], 'forgotChangePassword', [App\Http\Controllers\Auth\ForgotController::class, 'forgotChangePassword'])->name('forgotChangePassword');
 
     Route::group(['middleware' => ['auth']], function () {
         Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
