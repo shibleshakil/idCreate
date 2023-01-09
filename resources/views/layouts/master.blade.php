@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/551c06c85c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset ('css/style.css?v1')}}">
+    <link rel="stylesheet" href="{{ asset ('css/style.css?v1.1')}}">
     <style>
         .dropdown:hover .dropdown-menu {
             display: block;
@@ -90,66 +90,11 @@
 
         </div>
     </header>
-    @if ($errors->any() || Session::get('success') || Session::get('error'))
-    <div id="alertDiv" class="flex flex-col md:flex-row  md:items-center bg-shade border-y-2 border-y-white">
-        @if ($errors->any())
-        <div class="alert alert-danger px-3 lg:px-24 py-4 text-left text-red-500">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
-        @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block px-3 lg:px-24 py-4 text-left text-green-500">
-            <strong>{{ $message }}</strong>
-        </div>
-        @endif
-        @if ($message = Session::get('error'))
-        <div class="alert alert-danger alert-block px-3 lg:px-24 py-4 text-left text-red-500">
-            <strong>{{ $message }}</strong>
-        </div>
-        @endif
-    </div>
-    @endif
 
     @yield('content')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     @yield('script')
     <!-- js script  -->
-    <script>
-        function logSubmit(event) {
-            document.getElementById('no_company_text').innerHTML = ` 
-
-            <div class="text-red-600 mx-auto text-center items-center text-lg lg:text-xl mt-12">
-                আপনার খোঁজ করা কোম্পানিটি পাওয়া যায়নি
-            </div>
-            <div class="text-red-600 mx-auto text-center items-center text-lg lg:text-xl">
-                কোম্পানিটি খোঁজে না পাওয়া গেলে করণীয়-
-            </div>
-            <ul class="flex flex-col md:w-1/2 lg:w-1/4 mx-auto text-center  items-center list-disc">
-                <li class="text-text mt-8 text-start  text-lg lg:text-xl">
-                    ভাল করে দেখুন বানানে কোন ভুল আছে কি না। 
-                </li>
-                <li class="text-text mt-8 text-justify  text-lg lg:text-xl">
-                    আপনার কোম্পানীতে অন্য কেউ আইডি তৈরী করে থাকলে তার কাছ থেকে কোম্পানী কোড নিয়ে সার্চ করুন। কোম্পানী কোডটি প্রতিটি প্রোফাইলের শুরুতেই দেয়া আছে।
-                </li>
-                <li class="text-text mt-8 text-justify  text-lg lg:text-xl">
-                    বানান সঠিক থাকার পরেও কোম্পানিটি খোঁজে না পাওয়া মানে উক্ত কোম্পানীটি এখনো কেউ যুক্ত করেনি। নিচের কোম্পানী যোগ অপশন থেকে যোগ করে নিন। এটি একদম সহজ। আপনিও পারবেন। 
-                </li>
-            </ul>
-            <div class="p-2 w-full mt-5">
-                <button type="submit"
-                    class="flex flex justify-center items-center text-center mx-auto text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-shade_deep hover:text-text rounded-full text-lg">কোম্পানী যোগ করুন</button>
-            </div>`;
-            event.preventDefault();
-        }
-        search = document.getElementById('search')
-        search = document.getElementById('search2')
-        search.addEventListener('submit', logSubmit);
-
-    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#uploadImage").on('change', function(){

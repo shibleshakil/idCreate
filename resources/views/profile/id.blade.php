@@ -57,7 +57,7 @@
                 $associateUser = $users->where('id', $associate)->first();
             @endphp
             @if ($associateUser)
-            <div class=" px-3 text-text font-bangla text-sm lg:text-lg w-full lg:w-1/3 mx-auto flex justify-between space-x-1">
+            <div class="mb-3 px-3 text-text font-bangla text-sm lg:text-lg w-full lg:w-1/3 mx-auto flex justify-between space-x-1">
                 <div class="w-11 h-11 bg-white rounded">
                     <img class="w-11 h-11 bg-white rounded" src="{{$associateUser->image ?  asset ('/uploads/'.$associateUser->image) : asset ('/nav_icon/avatar.png')}}" alt="">
                 </div>
@@ -66,7 +66,7 @@
                     <button
                         class="bg-white text-primary hover:text-white hover:bg-primary border-2 border-primary rounded-full px-5  lg:px-7 -mr-6 lg:-mr-16 text-sm">লগ
                         ইন</button>
-                    <a href="#" class="text-lg lg:text-2xl text-primary"><i class="	fa fa-trash"></i></a>
+                    <a href="#" class="text-lg lg:text-2xl text-primary"><i class="fa fa-trash"></i></a>
                 </div>
             </div>
             @endif

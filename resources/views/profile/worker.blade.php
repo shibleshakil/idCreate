@@ -3,6 +3,7 @@
 @section('content')
     <!-- profile   -->
 
+    @include('alert')
     <div class="flex flex-col md:flex-row px-3 lg:px-24 py-4 md:items-center bg-shade">
 
         <div class=" flex  flex-row  space-x-5 font-bangla text-text items-center lg:w-1/3">
@@ -130,4 +131,5 @@
     @include('profile.common_links')
 @endsection
 @section('script')
+<script src="{{asset ('js/search.min.js') }}"></script>
 @endsection
