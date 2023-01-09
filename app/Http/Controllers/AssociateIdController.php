@@ -128,4 +128,15 @@ class AssociateIdController extends Controller
             Auth::loginUsingId($targetInfo->id);
         }
     }
+    public function associateIdDelete($targetId){
+        $userInfo = User::find(auth()->user()->id);
+        $userAssociateIDs = explode(',', $userInfo->associate_id);
+        $targetKey = array_search($targetId, $userAssociateIDs);
+        // dd($targetKey);
+        unset($userAssociateIDs[$targetKey]);
+        $newAssociate = implode(',', $userAssociateIDs);
+        $userInfo->associate_id = $newAssociate;
+        $userInfo->save();
+        return "Associate ID Deleted Successfully!";
+    }
 }

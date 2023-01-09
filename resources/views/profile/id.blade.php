@@ -64,9 +64,11 @@
                 <div class="w-full h-11 bg-white rounded flex justify-between items-center text-center pl-2 pr-4 md:px-4">
                     <p>{{$associateUser->name}}</p>
                     <button type="button" onclick="associateLoginAttempt('{{ route('associateLogin', ['id'=>auth()->user()->id, 'targetId'=>$associateUser->mobile_number]) }}')"
-                        class="bg-white text-primary hover:text-white hover:bg-primary border-2 border-primary rounded-full px-5  lg:px-7 -mr-6 lg:-mr-16 text-sm">লগ
-                        ইন</button>
-                    <a href="#" class="text-lg lg:text-2xl text-primary"><i class="fa fa-trash"></i></a>
+                        class="bg-white text-primary hover:text-white hover:bg-primary border-2 border-primary rounded-full px-5  lg:px-7 -mr-6 lg:-mr-16 text-sm">লগ ইন
+                    </button>
+                    <button type="button" onclick="associateIdDelete('{{ route('associateIdDelete', ['targetId'=>$associateUser->id]) }}')"
+                        class="text-lg lg:text-2xl text-primary"><i class="fa fa-trash"></i>
+                    </button>
                 </div>
             </div>
             @endif
@@ -78,7 +80,6 @@
     <script type="text/javascript">
         function associateLoginAttempt(url){
             let renderUrl = "{{ route ('profile') }}";
-            console.log(renderUrl);
             $.ajax({
                 url: url,
                 type: "put",
@@ -87,6 +88,20 @@
                 },
                 success: function (result) {
                     window.location = renderUrl;
+                }
+            });
+        }
+
+        function associateIdDelete(url){
+            $.ajax({
+                url: url,
+                type: "delete",
+                data: {
+                    "_token": $('#csrfToken').val(),
+                },
+                success: function (result) {
+                    alert(result);
+                    location.reload();
                 }
             });
         }

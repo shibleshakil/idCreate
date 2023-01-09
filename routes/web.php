@@ -66,6 +66,7 @@ Route::group(['middleware' => ['lang']], function () {
 
         // associate Id
         Route::get('add-associate-id', [App\Http\Controllers\AssociateIdController::class, 'addAssociatedIdForm'])->name('addAssociatedIdForm');
+        Route::delete('associate-id-delete/{targetId}', [App\Http\Controllers\AssociateIdController::class, 'associateIdDelete'])->name('associateIdDelete');
         Route::put('associate-id-login/{id}/{targetId}', [App\Http\Controllers\AssociateIdController::class, 'associateLogin'])->name('associateLogin');
         Route::match(['get', 'post'], 'send-otp', [App\Http\Controllers\AssociateIdController::class, 'sendOtp'])->name('sendOtp');
         Route::match(['get', 'post'], 'varify-otp', [App\Http\Controllers\AssociateIdController::class, 'varifyOtp'])->name('varifyOtp');
