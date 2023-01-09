@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use auth;
+use Auth;
 use Session;
 use App\Models\User;
 
@@ -118,5 +118,14 @@ class AssociateIdController extends Controller
         }
 
         return view('associateId.otp_submit');
+    }
+
+    public function associateLogin($id, $targetId){
+        // dd($id, $targetId);
+        $targetInfo = User::where('mobile_number', $targetId)->first();
+        if ($targetInfo) {
+            Session::flush();
+            Auth::loginUsingId($targetInfo->id);
+        }
     }
 }
